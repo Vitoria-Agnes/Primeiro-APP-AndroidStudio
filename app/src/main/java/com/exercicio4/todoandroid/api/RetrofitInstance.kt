@@ -7,7 +7,7 @@ import retrofit2.create
 
 object RetrofitInstance {
 
-    private val retrovit by lazy {
+    private val retrofit by lazy {
         Retrofit.Builder()
             .baseUrl(Constants.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
@@ -16,6 +16,6 @@ object RetrofitInstance {
     }
 
     val api: ApiService by lazy {
-        retrovit.create(ApiService::class.java)
+        retrofit.create(ApiService::class.java)
     }
 }
